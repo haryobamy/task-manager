@@ -12,8 +12,8 @@ type Props = {
 };
 export default function TaskItem({ task }: Props) {
   const dispatch = useAppDispatch();
-  const [getTaskQuery, { isLoading }] = useLazyGetTaskQuery();
-  const [deleteTaskMutation, { isLoading: deleting }] = useDeleteTaskMutation();
+  const [getTaskQuery] = useLazyGetTaskQuery();
+  const [deleteTaskMutation] = useDeleteTaskMutation();
 
   const getPriorityColor = (priority: string) => {
     switch (priority) {
@@ -28,12 +28,18 @@ export default function TaskItem({ task }: Props) {
     }
   };
 
-  const getTask = useCallback(async (id: string) => {
-    await getTaskQuery(id);
-  }, []);
-  const deleteTask = useCallback(async (id: string) => {
-    await deleteTaskMutation(id);
-  }, []);
+  const getTask = useCallback(
+    async (id: string) => {
+      await getTaskQuery(id);
+    },
+    [getTaskQuery],
+  );
+  const deleteTask = useCallback(
+    async (id: string) => {
+      await deleteTaskMutation(id);
+    },
+    [deleteTaskMutation],
+  );
   return (
     <motion.div
       className="flex h-[16rem] flex-col gap-4 rounded-lg border-2 border-white bg-[#f9f9f9] px-4 py-3 shadow-sm dark:bg-slate-950"

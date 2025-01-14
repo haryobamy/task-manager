@@ -1,3 +1,4 @@
+//@ts-ignore
 import { toast } from "react-toastify";
 import { TAppEndpointBuilder } from "../types";
 import { setTask, setTasks } from "../slices/task-slice";
@@ -21,8 +22,8 @@ export const taskEndpoints = (builder: TAppEndpointBuilder) => ({
   }),
 
   // Fetch a single task
-  getTask: builder.query<any, string>({
-    query: (taskId) => `/tasks/${taskId}`,
+  getTask: builder.query({
+    query: (taskId: string) => `/tasks/${taskId}`,
     // providesTags: (result, error, taskId) => [{ type: 'Tasks', id: taskId }],
     providesTags: ["Task"],
     async onQueryStarted(arg: any, { dispatch, queryFulfilled }: any) {
@@ -38,8 +39,8 @@ export const taskEndpoints = (builder: TAppEndpointBuilder) => ({
   }),
 
   // Create a new task
-  createTask: builder.mutation<any, Task>({
-    query: (task) => ({
+  createTask: builder.mutation({
+    query: (task: Task) => ({
       url: "/tasks",
       method: "POST",
       body: task,
@@ -58,7 +59,7 @@ export const taskEndpoints = (builder: TAppEndpointBuilder) => ({
   // Update a task
   updateTask: builder.mutation({
     query: (task: any) => ({
-      url: `/tasks/${task._id}`,
+      url: `/tasks/${task.id}`,
       method: "PATCH",
       body: task,
     }),
@@ -67,7 +68,7 @@ export const taskEndpoints = (builder: TAppEndpointBuilder) => ({
       try {
         await queryFulfilled;
         toast.success("Task updated successfully");
-      } catch (error) {
+      } catch (_error) {
         toast.error("Error updating task");
       }
     },
@@ -84,7 +85,7 @@ export const taskEndpoints = (builder: TAppEndpointBuilder) => ({
       try {
         await queryFulfilled;
         toast.success("Task deleted successfully");
-      } catch (error) {
+      } catch (_error) {
         toast.error("Error deleting task");
       }
     },

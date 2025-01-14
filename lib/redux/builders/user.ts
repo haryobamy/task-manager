@@ -1,6 +1,3 @@
 import { TAppEndpointBuilder } from "../types";
 
-
-export const userEndpoints = (builder: TAppEndpointBuilder) => ({
-
-});
+export const userEndpoints = (_builder: TAppEndpointBuilder) => ({});

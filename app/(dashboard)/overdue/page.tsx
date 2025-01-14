@@ -17,7 +17,7 @@ export default function OverduePage() {
 
   useEffect(() => {
     dispatch(setPriority("all"));
-  }, []);
+  });
   return (
     <main className="m-6 h-full">
       <div className="flex justify-between">

@@ -58,7 +58,7 @@ export default function Header() {
 
         <div className="flex items-center gap-4">
           <Link
-            href="https://github.com/Maclinz/taskfyer"
+            href="https://github.com/haryobamy/task-manager"
             passHref
             target="_blank"
             rel="noopener noreferrer"
@@ -77,7 +77,7 @@ export default function Header() {
             )}
           </button>
           <Link
-            href="https://github.com/Maclinz/taskfyer"
+            href="https://github.com/haryobamy/task-manager"
             passHref
             target="_blank"
             rel="noopener noreferrer"

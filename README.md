@@ -1,36 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Task Manager Frontend Application
 
-## Getting Started
+Welcome to the Task Manager App! This project showcases a modern, responsive, and feature-rich task management system built with Next.js, Tailwind and TypeScript.
 
-First, run the development server:
+## Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The Task Manager App allows users to effectively manage their tasks by creating, updating, deleting, and organizing them into categories. This project demonstrates my proficiency in building user-centric applications with best practices in UI/UX, state management, and API integration.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Live Demo
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+You can view a live demo of the project [here](#).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Technologies Used
 
-## Learn More
+- **Frontend:** Nextjs, TypeScript, Tailwind CSS
+- **State Management:** React Redux
+- **Mock Backend:** JSON Server
+- **Deployment:** Vercel
+- **Version Control:** Git, GitHub
 
-To learn more about Next.js, take a look at the following resources:
+## Features
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Core Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Task Management:**
+  - Add, edit, delete, and view tasks
+  - Assign tasks to categories (e.g., low, medium, critical)
+  - Search and filter tasks by category or keyword
 
-## Deploy on Vercel
+### Unique Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Task Completion Progress Bar:**
+  - Visualize task completion status with a progress bar
+- **Dark Mode Toggle:**
+  - Switch between light and dark themes for a personalized experience
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Responsive Design
+
+- Built with responsive design principles to ensure a seamless experience across all devices.
+
+## Installation
+
+To run the Task Manager App locally, follow these steps:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/haryobamy/task-manager.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd task-manager
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm start
+   ```
+
+## API Integration
+
+The app uses a mock backend powered by JSON Server to provide CRUD functionality for tasks.
+
+### Starting the Mock Backend
+
+1. Install JSON Server:
+   ```bash
+   npm install -g json-server
+   ```
+2. Run the mock server:
+   ```bash
+   json-server --watch db.json
+   ```
+
+## Deployment
+
+The app is deployed on Vercel and can be accessed via a live URL.
+
+## Project Structure
+
+The project follows a clean, modular, and scalable structure with the following directories:
+
+- **/src**
+  - **components**: Reusable UI components
+  - **context**: State management using React redux
+  - **pages**: Main application pages
+  - **services**: API interaction logic
+  - **styles**: Global styles and theme configuration
+
+## TypeScript Best Practices
+
+- Clear type definitions for components and API interactions
+- Strong type safety to minimize runtime errors
+
+## Contact
+
+Have a project in mind or just want to connect? Feel free to reach out:
+
+- **Email:** haryobamy.badmus@gmail.com
+- **LinkedIn:** [https://www.linkedin.com/in/badmussulaimon](https://www.linkedin.com/in/badmussulaimon)
+- **GitHub:** [https://github.com/haryobamy](https://github.com/haryobamy)
+
+Thank you for exploring my Task Manager App!

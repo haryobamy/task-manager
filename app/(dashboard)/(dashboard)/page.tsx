@@ -1,9 +1,7 @@
 "use client";
 import React from "react";
-import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { container, item } from "@/lib/animation";
-import { useBoolean } from "usehooks-ts";
 import Filters from "@/components/ui/filters";
 import { useAppDispatch, useAppSelector } from "@/lib/redux/store";
 import { filteredTasks } from "@/lib/utils";
@@ -13,9 +11,8 @@ import { toggleTaskModal } from "@/lib/redux/slices/task-slice";
 
 export default function Dashboard() {
   const dispatch = useAppDispatch();
-  const { value: isOpen, setTrue: openModalForAdd } = useBoolean();
   const { tasks, priority } = useAppSelector((state) => state.task);
-  const { data, isLoading, error } = useGetTasksQuery();
+  const { data } = useGetTasksQuery();
 
   // useRedirect("/login");
 

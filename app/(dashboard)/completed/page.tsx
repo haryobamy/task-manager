@@ -12,9 +12,9 @@ import { useGetTasksQuery } from "@/lib/redux/slice";
 
 export default function CompletedPage() {
   const dispatch = useAppDispatch();
-  const { tasks, priority } = useAppSelector((state) => state.task);
+  const { priority } = useAppSelector((state) => state.task);
 
-  const { data, isLoading, error } = useGetTasksQuery();
+  const { data } = useGetTasksQuery();
 
   const completedTasks = data?.filter((task: Task) => task?.completed);
   const filtered = filteredTasks(completedTasks, priority);

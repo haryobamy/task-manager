@@ -17,7 +17,7 @@ export default function PendingPage() {
 
   useEffect(() => {
     dispatch(setPriority("all"));
-  }, []);
+  });
   return (
     <main className="m-6 h-full">
       <div className="flex justify-between">

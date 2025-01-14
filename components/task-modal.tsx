@@ -39,7 +39,7 @@ const formSchema = z.object({
     message: "description must be at least 2 characters.",
   }),
   priority: z.string(),
-  dueDate: z.date(),
+  dueDate: z.string(),
   completed: z.string(),
 });
 
@@ -58,17 +58,17 @@ export default function TaskModal() {
       description: "",
       priority: "",
       completed: "false",
-      dueDate: new Date(),
+      dueDate: new Date().toLocaleDateString(),
     },
   });
 
   useEffect(() => {
     if (modalMode === "edit" && openTaskModal) {
-      form.setValue("completed", task?.completed.toString());
-      form.setValue("description", task?.description);
-      form.setValue("dueDate", task?.dueDate);
-      form.setValue("priority", task?.priority.toLowerCase());
-      form.setValue("title", task?.title);
+      form.setValue("completed", task?.completed.toString() || "");
+      form.setValue("description", task?.description || "");
+      form.setValue("dueDate", (task as Task)?.dueDate);
+      form.setValue("priority", task?.priority.toLowerCase() || "");
+      form.setValue("title", task?.title || "");
       return;
     }
     if (openTaskModal && modalMode === "add") {
@@ -85,6 +85,8 @@ export default function TaskModal() {
       const payload = {
         ...values,
         ...task,
+        _id: task?._id as string,
+        id: task?.id as string,
         dueDate: new Date(values?.dueDate).toLocaleDateString(),
         completed: isCompleted,
         status: isCompleted ? "Completed" : "In Progress",

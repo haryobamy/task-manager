@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface initialStateTypes {
   tasks: Task[];
-  task: any;
+  task: Task | null;
   isEditing: boolean;
   priority: string;
   activeTask: null;
@@ -13,7 +13,7 @@ export interface initialStateTypes {
 
 const initialState: initialStateTypes = {
   tasks: [],
-  task: {},
+  task: null,
   isEditing: false,
   openTaskModal: false,
   priority: "all",
@@ -48,7 +48,7 @@ export const taskSlice = createSlice({
     setTasks(state, { payload }: PayloadAction<Task[]>) {
       state.tasks = payload;
     },
-    setTask(state, { payload }: PayloadAction<Task[]>) {
+    setTask(state, { payload }: PayloadAction<Task>) {
       state.task = payload;
     },
   },
