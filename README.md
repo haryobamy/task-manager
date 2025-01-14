@@ -8,7 +8,7 @@ The Task Manager App allows users to effectively manage their tasks by creating,
 
 ## Live Demo
 
-You can view a live demo of the project [here](#).
+You can view a live demo of the project [https://task-manager-gamma-dun.vercel.app/](#).
 
 ## Technologies Used
 
@@ -85,8 +85,8 @@ The project follows a clean, modular, and scalable structure with the following 
 - **/src**
   - **components**: Reusable UI components
   - **context**: State management using React redux
-  - **pages**: Main application pages
-  - **services**: API interaction logic
+  - **app**: Main application pages
+  - **lib**: this contains the utility files and constantts
   - **styles**: Global styles and theme configuration
 
 ## TypeScript Best Practices
